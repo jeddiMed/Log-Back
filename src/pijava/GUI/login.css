@@ -1,0 +1,31 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#username{
+    -fx-text-inner-color: white;
+}
+
+#password{
+    -fx-text-inner-color: white;
+}
+
+#btn_cnx{
+    -fx-background-color:  #175C76;
+    -fx-border-color: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+#btn_cnx:hover{
+    
+    -fx-text-fill: #e41b1b;
+    -fx-background-color: white;
+    -fx-font-weight: bold;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;
+    transition: -fx-background-color 2s;
+    
+   
+}

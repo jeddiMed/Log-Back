@@ -1,0 +1,37 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#btn_dashboard{
+    -fx-background-color:  #112436;
+    -fx-border-color:  white;
+    -fx-border-width: 3px;
+}
+
+#btn_dashboard:hover{
+    -fx-background-color: #c96b19;
+    
+   
+}
+#btn_categorie{
+    -fx-background-color:  #112436;
+    -fx-border-color:  white;
+    -fx-border-width: 1px;
+    -fx-border-radius:  3px;
+}
+
+#btn_categorie:hover{
+    -fx-background-color: #175C76;
+    
+}
+
+#btn_produit{
+    -fx-background-color:  #112436;
+    -fx-border-color:  white;
+    -fx-border-width: 1px;
+    -fx-border-radius:  3px;
+}
+#btn_produit:hover{
+    -fx-background-color: #175C76;
+}
+
