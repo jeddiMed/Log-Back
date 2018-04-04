@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #112436;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="pijava.GUI.SignUpController">
+    <stylesheets>
+        <URL value="@signup.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="username" layoutX="64.0" layoutY="36.0" promptText="Username" style="-fx-background-color: #112436;">
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </TextField>
+      <PasswordField fx:id="password" layoutX="64.0" layoutY="76.0" promptText="Password" style="-fx-background-color: #112436;">
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </PasswordField>
+      <PasswordField fx:id="Repassword" layoutX="64.0" layoutY="117.0" promptText="Repeat_Password" style="-fx-background-color: #112436;">
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </PasswordField>
+      <TextField fx:id="email" layoutX="64.0" layoutY="158.0" promptText="Email" style="-fx-background-color: #112436;">
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </TextField>
+      <TextField fx:id="name" layoutX="363.0" layoutY="36.0" promptText="Name" style="-fx-background-color: #112436;">
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </TextField>
+      <TextField fx:id="adresse" layoutX="363.0" layoutY="76.0" promptText="Adresse" style="-fx-background-color: #112436;">
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </TextField>
+      <TextField fx:id="telephone" layoutX="363.0" layoutY="117.0" promptText="Telephone" style="-fx-background-color: #112436;">
+         <effect>
+            <Glow level="0.5" />
+         </effect>
+      </TextField>
+      <Button fx:id="btn_valider" layoutX="268.0" layoutY="227.0" mnemonicParsing="false" onAction="#CreateUser" text="Valider" />
+      <ComboBox fx:id="combo" layoutX="363.0" layoutY="158.0" prefWidth="150.0" />
+      <Label fx:id="erreurPassword" layoutX="230.0" layoutY="114.0" prefHeight="38.0" prefWidth="100.0" text="Label" textFill="#f50f0f" visible="false" />
+   </children>
+</AnchorPane>

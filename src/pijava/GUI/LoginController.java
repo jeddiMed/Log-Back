@@ -41,6 +41,8 @@ public class LoginController implements Initializable {
     private Label erreur;
     @FXML
     private ImageView logo;
+    @FXML
+    private Button btn_SignUp;
 
     /**
      * Initializes the controller class.
@@ -90,6 +92,26 @@ public class LoginController implements Initializable {
             erreur.setText("Failed, Try again !");
         }
         erreur.setVisible(true);
+    }
+
+    @FXML
+    private void SignUpAction(ActionEvent event) {
+        Parent root = null;
+                try {
+                    
+                    root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
+                    Scene s2 = new Scene(root);
+                    Stage primaryStage=new Stage();
+                    primaryStage.setScene(s2);
+                    primaryStage.show();
+                    
+                    Stage actualStage = (Stage) btn_SignUp.getScene().getWindow();
+                    actualStage.close();
+                    
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+               btn_SignUp.getScene().setRoot(root);
     }
     
 }

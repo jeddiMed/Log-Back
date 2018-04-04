@@ -1,0 +1,25 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#username:hover{
+    -fx-cursor: text;
+}
+#password:hover{
+    -fx-cursor: text;
+}
+#Repassword:hover{
+    -fx-cursor: text;
+}
+#email:hover{
+    -fx-cursor: text;
+}
+#name:hover{
+    -fx-cursor: text;
+}
+#adresse:hover{
+    -fx-cursor: text;
+}
+#telephone:hover{
+    -fx-cursor: text;
+}

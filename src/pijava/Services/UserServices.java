@@ -11,6 +11,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.mindrot.jbcrypt.BCrypt;
 import pijava.entities.User;
 
@@ -114,8 +119,45 @@ public class UserServices implements IUserServices{
         else {return  null;}
 
     }
-
     
+        public boolean addUser(User u) {
+            try {
+                String query = "insert into `user`(`username`, `username_canonical`, "
+                        + "`email`, `email_canonical`, `enabled`, "
+                        + "`password`, `last_login`,"
+                        + " `roles`, `nom`, `adresse`,"
+                        + " `telephone`  ) VALUES(?,?,?,?,?,?,?,?,?,?,?) ;";
+                PreparedStatement st = conn.prepareStatement(query);
+                st.setString(1, u.getUsername());
+                st.setString(2, u.getUsername());
+                st.setString(3, u.getEmail());
+                st.setString(4, u.getEmail());
+                st.setString(5, "1");
+                st.setString(6, this.hashPassword(u.getPassword()));
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date date = new Date();
+                st.setString(7,dateFormat.format(date));
+                st.setString(8, u.getRole());
+                st.setString(9, u.getNom());
+                st.setString(10, u.getAdresse());
+                st.setString(11,String.valueOf(u.getTelephone()));
+                              
+                st.execute();
+System.out.println("User added with success !");
+            } catch (SQLException ex) {
+                Logger.getLogger(UserServices.class.getName()).log(Level.SEVERE, null, ex);
+
+            }
+return true;
+    }
+
+     public  String hashPassword(String password_plaintext) {
+        String salt = BCrypt.gensalt(13);
+        String thashed_password = BCrypt.hashpw(password_plaintext, salt);
+        String hashed_password = thashed_password.substring(0, 2) + 'y' + thashed_password.substring(3);
+
+        return(hashed_password);
+    }
     
     
 }

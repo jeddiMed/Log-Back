@@ -25,10 +25,11 @@ import javafx.stage.Stage;
  * @author mohamed
  */
 public class PIJava extends Application {
-    public static User user=null;    
+    public static User user=null; 
+    
+    
     @Override
     public void start(Stage primaryStage) {
-        
         
         
         Parent root = null;
